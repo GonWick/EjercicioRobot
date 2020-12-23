@@ -24,6 +24,7 @@
         ElseIf TextBoxFrase.Text = P Or RadioButtonPlaton.Checked = True Then
             LabelRespuesta.Text = " ¡Solo sé que nada se!"
         Else
+            LabelRespuesta.Text = ""
             MsgBox("Escriba Descartes o Platón para ver sus Frases famosas.",, "Texto Mal")
         End If
 
@@ -41,14 +42,17 @@
     End Sub
 
     Private Sub RadioButtonPlaton_CheckedChanged(sender As Object, e As EventArgs) Handles RadioButtonPlaton.CheckedChanged
+        LabelRespuesta.Text = ""
         TextBoxFrase.Text = "Platon"
     End Sub
 
     Private Sub RadioButtonDescartes_CheckedChanged(sender As Object, e As EventArgs) Handles RadioButtonDescartes.CheckedChanged
+        LabelRespuesta.Text = ""
         TextBoxFrase.Text = "Descartes"
     End Sub
 
     Private Sub TextBoxFrase_MouseClick(sender As Object, e As MouseEventArgs) Handles TextBoxFrase.MouseClick
+        LabelRespuesta.Text = ""
         TextBoxFrase.Text = ""
     End Sub
 End Class
